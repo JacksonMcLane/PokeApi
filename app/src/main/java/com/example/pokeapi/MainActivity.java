@@ -1,11 +1,13 @@
 package com.example.pokeapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private PokemonService pokemonService;
     private Retrofit retrofit;
+    private Button buttonSearch;
+    private EditText editTextPokeNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +33,32 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         pokemonService = retrofit.create(PokemonService.class);
-        randomPokemon(pokemonService);
+
     }
 
     private void setListeners() {
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPokemonByDexNum(pokemonService, String.valueOf(editTextPokeNum.getText()));
+            }
+        });
     }
 
     private void wireWidgets() {
+        editTextPokeNum = findViewById(R.id.editText_main_pokeNum);
+        buttonSearch = findViewById(R.id.button_main_search);
     }
 
-    private void randomPokemon(PokemonService pokemonService) {
-        Call<Pokemon> pokemonCall = pokemonService.getPokemonByDexNum("1");
+    private void getPokemonByDexNum(PokemonService pokemonService, String dexNum) {
+        Call<Pokemon> pokemonCall = pokemonService.getPokemonByDexNum(dexNum);
         pokemonCall.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 Pokemon foundPokemon = response.body();
-                Toast.makeText(MainActivity.this, foundPokemon.getName(), Toast.LENGTH_LONG).show();
-                //Picasso.get().load(foundPokemon.getId()).into(imageViewDogPhoto);
+                if(foundPokemon != null) {
+                    Toast.makeText(MainActivity.this, foundPokemon.getName(), Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override

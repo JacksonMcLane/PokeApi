@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PokeApi</string>
+    <string name="button_search">Search</string>
+    <string name="editText_hint">Pokedex Number</string>
 </resources>
