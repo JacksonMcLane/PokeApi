@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface PokemonService {
-    String BASE_URL = "https://pokeapi.co/api/v2/";
-    @GET("breed/{breed}/images/random")
+    String BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
+    @GET("pokemon/{dexNum}/")
     Call<Pokemon> getPokemonByDexNum(@Path("dexNum") String dexDum);
 }
