@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SearchFragment">
 
     <Button
-        android:id="@+id/button_main_search"
+        android:id="@+id/button_search"
         android:layout_width="87dp"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -17,11 +17,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editText_main_pokeNum"
+        app:layout_constraintStart_toEndOf="@+id/editText_pokeNum"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText_main_pokeNum"
+        android:id="@+id/editText_pokeNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,7 +31,7 @@
         android:inputType="textPersonName"
         android:hint="@string/editText_hint"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_main_search"
+        app:layout_constraintEnd_toStartOf="@+id/button_search"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

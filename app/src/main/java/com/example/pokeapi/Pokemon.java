@@ -1,5 +1,7 @@
 package com.example.pokeapi;
 
+import android.os.Parcel;
+
 import java.util.List;
 
 public class Pokemon {
@@ -12,9 +14,7 @@ public class Pokemon {
     private List stats;
     private List types;
 
-    public Pokemon(){
-
-    }
+    public Pokemon(){}
 
     public int getId() {
         return id;
@@ -79,6 +79,5 @@ public class Pokemon {
     public void setTypes(List types) {
         this.types = types;
     }
-
 
 }
