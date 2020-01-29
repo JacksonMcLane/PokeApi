@@ -9,10 +9,10 @@ public class Pokemon {
     private String name;
     private int height;
     private int weight;
-    private List abilities;
-    private List moves;
-    private List stats;
-    private List types;
+    private List<Ability> abilities;
+    private List<Move> moves;
+    private List<Stat> stats;
+    private List<Type> types;
 
     public Pokemon(){}
 

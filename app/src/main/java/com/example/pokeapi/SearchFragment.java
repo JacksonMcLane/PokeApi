@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +44,7 @@ public class SearchFragment extends Fragment {
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 getPokemonByDexNumOrName(pokemonService, String.valueOf(editTextPokeNum.getText()));
             }
         });
@@ -55,7 +56,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void getPokemonByDexNumOrName(PokemonService pokemonService, String dexNum) {
-        Call<Pokemon> pokemonCall = pokemonService.getPokemonByDexNum(dexNum);
+        Call<Pokemon> pokemonCall = pokemonService.getPokemonByDexNumOrName(dexNum);
         pokemonCall.enqueue(new Callback<Pokemon>() {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
@@ -73,7 +74,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("Search Fragment", "onFailure: " + t.getMessage());
             }
         });
     }

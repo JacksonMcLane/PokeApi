@@ -9,10 +9,77 @@
         android:id="@+id/textView_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="This is working"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_item_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_item_name"
+        app:layout_constraintTop_toTopOf="@+id/textView_item_name" />
+
+    <TextView
+        android:id="@+id/textView_item_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textView_item_name"
+        app:layout_constraintTop_toBottomOf="@+id/textView_item_name" />
+
+    <TextView
+        android:id="@+id/textView_item_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_item_height"
+        app:layout_constraintTop_toTopOf="@+id/textView_item_height" />
+
+    <TextView
+        android:id="@+id/textView_item_abilities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="140dp"
+        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_item_moves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_item_abilities"
+        app:layout_constraintTop_toTopOf="@+id/textView_item_abilities" />
+
+    <TextView
+        android:id="@+id/textView_item_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textView_item_abilities"
+        app:layout_constraintTop_toBottomOf="@+id/textView_item_abilities" />
+
+    <TextView
+        android:id="@+id/textView_item_types"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView_item_stats"
+        app:layout_constraintTop_toTopOf="@+id/textView_item_stats" />
 </androidx.constraintlayout.widget.ConstraintLayout>
