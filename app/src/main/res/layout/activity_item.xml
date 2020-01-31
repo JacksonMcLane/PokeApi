@@ -50,36 +50,35 @@
         android:id="@+id/textView_item_abilities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="33dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_item_moves"
+        app:layout_constraintStart_toStartOf="@+id/textView_item_weight" />
 
     <TextView
         android:id="@+id/textView_item_moves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="78dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView_item_abilities"
-        app:layout_constraintTop_toTopOf="@+id/textView_item_abilities" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_item_weight" />
 
     <TextView
         android:id="@+id/textView_item_stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/textView_item_abilities"
-        app:layout_constraintTop_toBottomOf="@+id/textView_item_abilities" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_item_types"
+        app:layout_constraintStart_toStartOf="@+id/textView_item_abilities" />
 
     <TextView
         android:id="@+id/textView_item_types"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView_item_stats"
-        app:layout_constraintTop_toTopOf="@+id/textView_item_stats" />
+        app:layout_constraintStart_toStartOf="@+id/textView_item_moves"
+        app:layout_constraintTop_toBottomOf="@+id/textView_item_moves" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.pokeapi;
 
 import android.os.Bundle;
-import android.os.Parcel;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ItemFragment extends Fragment {
@@ -40,14 +37,54 @@ public class ItemFragment extends Fragment {
         textViewId.setText(String.valueOf(pokemon.getId()));
         textViewHeight.setText(String.valueOf(pokemon.getHeight()));
         textViewWeight.setText(String.valueOf(pokemon.getWeight()));
-        textViewAbilities.setText(getListAsString(pokemon.getAbilities()));
+        textViewAbilities.setText(getAbilitiesAsString(pokemon.getAbilities()));
+        textViewMoves.setText(getMovesAsString(pokemon.getMoves()));
+        textViewStats.setText(getStatsAsString(pokemon.getStats()));
+        textViewTypes.setText(getTypesAsString(pokemon.getTypes()));
     }
 
-    private CharSequence getListAsString(List<Ability> abilities) {
+    private CharSequence getAbilitiesAsString(List<PokemonAbility> abilities) {
         StringBuilder sb = new StringBuilder();
-        for (Ability ability : abilities)
+
+        for (PokemonAbility ability : abilities)
         {
             String s = ability.getName();
+            sb.append(s);
+            sb.append("\t");
+        }
+
+        return sb.toString();
+    }
+
+    private CharSequence getMovesAsString(List<PokemonMove> moves) {
+        StringBuilder sb = new StringBuilder();
+        for (PokemonMove move : moves)
+        {
+            String s = move.getName();
+            sb.append(s);
+            sb.append("\t");
+        }
+
+        return sb.toString();
+    }
+
+    private CharSequence getStatsAsString(List<PokemonStat> stats) {
+        StringBuilder sb = new StringBuilder();
+        for (PokemonStat stat : stats)
+        {
+            String s = stat.getName();
+            sb.append(s);
+            sb.append("\t");
+        }
+
+        return sb.toString();
+    }
+
+    private CharSequence getTypesAsString(List<PokemonType> types) {
+        StringBuilder sb = new StringBuilder();
+        for (PokemonType type : types)
+        {
+            String s = type.getName();
             sb.append(s);
             sb.append("\t");
         }

@@ -1,10 +1,10 @@
 package com.example.pokeapi;
 
-public class Stat {
+public class PokemonStat {
     private String name;
     private int base_stat;
 
-    public Stat(){
+    public PokemonStat(){
 
     }
 

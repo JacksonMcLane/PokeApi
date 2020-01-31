@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Arrays;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,6 +64,7 @@ public class SearchFragment extends Fragment {
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 Pokemon foundPokemon = response.body();
                 if(foundPokemon != null) {
+                    Log.d("SearchFragment", "onResponse: " + foundPokemon.getAbilities().get(0).getName());
                     FragmentManager fm = getActivity().getSupportFragmentManager();
                     Fragment fragment = new ItemFragment(foundPokemon);
                     if (fragment != null) {

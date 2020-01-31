@@ -1,9 +1,9 @@
 package com.example.pokeapi;
 
-public class Type {
+public class PokemonMove {
     private String name;
 
-    public Type(){
+    public PokemonMove(){
 
     }
 

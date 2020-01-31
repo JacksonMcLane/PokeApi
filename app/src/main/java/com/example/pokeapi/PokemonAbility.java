@@ -1,9 +1,10 @@
 package com.example.pokeapi;
 
-public class Move {
+public class PokemonAbility {
+
     private String name;
 
-    public Move(){
+    public PokemonAbility(){
 
     }
 

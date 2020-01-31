@@ -1,7 +1,5 @@
 package com.example.pokeapi;
 
-import android.os.Parcel;
-
 import java.util.List;
 
 public class Pokemon {
@@ -9,10 +7,10 @@ public class Pokemon {
     private String name;
     private int height;
     private int weight;
-    private List<Ability> abilities;
-    private List<Move> moves;
-    private List<Stat> stats;
-    private List<Type> types;
+    private List<PokemonAbility> abilities;
+    private List<PokemonMove> moves;
+    private List<PokemonStat> stats;
+    private List<PokemonType> types;
 
     public Pokemon(){}
 
@@ -48,35 +46,35 @@ public class Pokemon {
         this.weight = weight;
     }
 
-    public List getAbilities() {
+    public List<PokemonAbility> getAbilities() {
         return abilities;
     }
 
-    public void setAbilities(List abilities) {
+    public void setAbilities(List<PokemonAbility> abilities) {
         this.abilities = abilities;
     }
 
-    public List getMoves() {
+    public List<PokemonMove> getMoves() {
         return moves;
     }
 
-    public void setMoves(List moves) {
+    public void setMoves(List<PokemonMove> moves) {
         this.moves = moves;
     }
 
-    public List getStats() {
+    public List<PokemonStat> getStats() {
         return stats;
     }
 
-    public void setStats(List stats) {
+    public void setStats(List<PokemonStat> stats) {
         this.stats = stats;
     }
 
-    public List getTypes() {
+    public List<PokemonType> getTypes() {
         return types;
     }
 
-    public void setTypes(List types) {
+    public void setTypes(List<PokemonType> types) {
         this.types = types;
     }
 
