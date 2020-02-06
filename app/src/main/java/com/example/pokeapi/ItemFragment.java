@@ -1,6 +1,7 @@
 package com.example.pokeapi;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,17 @@ public class ItemFragment extends Fragment {
 
     private CharSequence getAbilitiesAsString(List<PokemonAbility> abilities) {
         StringBuilder sb = new StringBuilder();
-
+        int count=1;
         for (PokemonAbility ability : abilities)
         {
-            String s = ability.getName();
+
+            String s = ability.getAbility().getName();
             sb.append(s);
             sb.append("\t");
+            if(count%3 == 0){
+                sb.append("\n");
+            }
+            count++;
         }
 
         return sb.toString();
@@ -58,11 +64,16 @@ public class ItemFragment extends Fragment {
 
     private CharSequence getMovesAsString(List<PokemonMove> moves) {
         StringBuilder sb = new StringBuilder();
+        int count=1;
         for (PokemonMove move : moves)
         {
-            String s = move.getName();
+            String s = move.getMove().getName();
             sb.append(s);
             sb.append("\t");
+            if(count % 3 == 0){
+                sb.append("\n");
+            }
+            count++;
         }
 
         return sb.toString();
@@ -70,11 +81,16 @@ public class ItemFragment extends Fragment {
 
     private CharSequence getStatsAsString(List<PokemonStat> stats) {
         StringBuilder sb = new StringBuilder();
+        int count=1;
         for (PokemonStat stat : stats)
         {
-            String s = stat.getName();
+            String s = stat.getStat().getName();
             sb.append(s);
             sb.append("\t");
+            if(count % 3 == 0){
+                sb.append("\n");
+            }
+            count++;
         }
 
         return sb.toString();
@@ -82,11 +98,17 @@ public class ItemFragment extends Fragment {
 
     private CharSequence getTypesAsString(List<PokemonType> types) {
         StringBuilder sb = new StringBuilder();
+        int count=1;
         for (PokemonType type : types)
         {
-            String s = type.getName();
+            String s = type.getType().getName();
             sb.append(s);
             sb.append("\t");
+            if(count % 3  == 0){
+                sb.append("\n");
+            }
+            count++;
+
         }
 
         return sb.toString();

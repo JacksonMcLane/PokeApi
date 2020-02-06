@@ -2,10 +2,19 @@ package com.example.pokeapi;
 
 public class PokemonStat {
     private String name;
+    private NamedAPIResource stat;
     private int base_stat;
 
     public PokemonStat(){
 
+    }
+
+    public NamedAPIResource getStat() {
+        return stat;
+    }
+
+    public void setStat(NamedAPIResource stat) {
+        this.stat = stat;
     }
 
     public String getName() {
